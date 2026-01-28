@@ -1,7 +1,7 @@
 export default function ExactServicesSection() {
     return (
         <section className="relative min-h-screen bg-gradient-to-b from-[#cfeeff] via-[#eaf6ff] to-white">
-            <div className="max-w-7xl mx-auto md:px-20 grid md:grid-cols-[1.1fr_80px_1fr]">
+            <div className="max-w-full mx-auto md:px-20 grid md:grid-cols-[1.1fr_80px_1fr]">
 
                 {/* LEFT CONTENT (STICKY & CENTERED) */}
                 <div className="sticky top-0 h-screen flex flex-col justify-center pr-10">

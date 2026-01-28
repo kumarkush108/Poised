@@ -87,7 +87,7 @@ export default function AchievementsSection() {
           "linear-gradient(-97.8deg, #723fc7 30%, #5192f7 76.87%, #407cd9 100%)",
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 py-24 text-white">
+      <div className="max-w-full mx-auto px-6 py-24 text-white">
 
         {/* HEADING */}
         <div className="text-center mb-[40px]">

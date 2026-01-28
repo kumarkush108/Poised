@@ -63,7 +63,7 @@ export default function ServicesSection() {
       ref={sectionRef}
       className="bg-[#020617] text-white py-20"
     >
-      <div className="max-w-7xl mx-auto md:px-20 grid md:grid-cols-2 gap-20 items-start">
+      <div className="max-w-full mx-auto md:px-20 grid md:grid-cols-2 gap-20 items-start">
 
         {/* LEFT CONTENT (STICKY) */}
         <div className="sticky top-28">
