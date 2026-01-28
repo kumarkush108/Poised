@@ -4,7 +4,7 @@ import AboutImage from "../../assets/about-mockup.png"; // replace with your ima
 export default function AboutHome() {
     return (
         <section className="relative bg-[#050726] text-white py-20 overflow-hidden">
-            <div className="max-w-7xl mx-auto px-6 md:px-20 grid md:grid-cols-2 gap-16 items-center">
+            <div className="max-w-full mx-auto px-6 md:px-20 grid md:grid-cols-2 gap-16 items-center">
 
                 {/* LEFT CONTENT */}
                 <div>
