@@ -29,7 +29,7 @@ export default function BrandSlider() {
           640: { slidesPerView: 3 },
           1024: { slidesPerView: 5 },
         }}
-        className="max-w-6xl mx-auto"
+        className="max-w-full mx-auto"
       >
         {brands.map((brand, i) => (
           <SwiperSlide key={i}>

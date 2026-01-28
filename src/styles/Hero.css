@@ -21,7 +21,7 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%) rotate(15deg);
-  width: 130%;
+  width: 100%;
   display: flex;
   gap: 12px;
 }
