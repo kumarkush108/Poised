@@ -126,9 +126,98 @@
 @media (max-width: 768px) {
   .hero-content {
     padding: 0 24px;
+    min-height: 60vh;
   }
 
   .hero-text h1 {
     font-size: 42px;
+  }
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE HERO
+   ========================= */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 60vh;
+    padding: 0;
+  }
+
+  /* Background columns – reduce visual load */
+  .hero-bg-wrapper {
+    grid-template-columns: repeat(2, 1fr); /* 3 → 2 columns */
+    gap: 10px;
+    width: 140%;
+  }
+
+  .hero-column img {
+    height: 160px;
+    object-fit: cover;
+  }
+
+  /* Overlay darker for readability */
+  .hero-overlay {
+    background: rgba(0, 0, 0, 0.65);
+  }
+
+  /* Content center aligned */
+  .hero-content {
+    padding: 0 16px;
+    align-items: center;
+    text-align: center;
+    min-height: 60vh;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-tag {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .hero-text h1 {
+    font-size: 34px;
+    line-height: 1.2;
+  }
+
+  .hero-desc {
+    font-size: 15px;
+    margin-top: 12px;
+  }
+
+  .hero-btn {
+    margin-top: 20px;
+    padding: 12px 22px;
+    font-size: 14px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+   ========================= */
+@media (max-width: 480px) {
+  .hero-bg-wrapper {
+    grid-template-columns: 1fr; /* single column */
+    width: 140%;
+  }
+
+  .hero-column img {
+    height: 140px;
+  }
+
+  .hero-text h1 {
+    font-size: 28px;
+  }
+
+  .hero-desc {
+    font-size: 14px;
+  }
+
+  .hero-btn {
+    width: 100%;
+    text-align: center;
   }
 }

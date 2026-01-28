@@ -1,4 +1,22 @@
-/* Base */
+/* =========================
+   GLOBAL SAFETY
+   ========================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* =========================
+   BASE NAVBAR
+   ========================= */
 .navbar {
   height: 70px;
   padding: 0 30px;
@@ -8,16 +26,24 @@
   background: #fff;
   box-shadow: 0 2px 10px rgba(0,0,0,0.08);
   position: relative;
+  width: 100%;
+}
+
+/* Logo */
+.logo {
+  height: 42px;
 }
 
 .logo img {
-  height: 40px;
+  height: 100%;
   width: auto;
   object-fit: contain;
   cursor: pointer;
 }
 
-/* Links */
+/* =========================
+   NAV LINKS (DESKTOP)
+   ========================= */
 .nav-links {
   list-style: none;
   display: flex;
@@ -34,7 +60,9 @@
   font-weight: 600;
 }
 
-/* Button */
+/* =========================
+   BUTTONS
+   ========================= */
 .btn {
   padding: 10px 20px;
   border: none;
@@ -48,7 +76,13 @@
   display: block;
 }
 
-/* Hamburger */
+.mobile-btn {
+  display: none;
+}
+
+/* =========================
+   HAMBURGER
+   ========================= */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -62,133 +96,16 @@
   background: #333;
 }
 
-.mobile-btn {
-    display: none;
-  }
-
-/* Mobile */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
-  .desktop-btn {
-    display: none;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background: #fff;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 20px 0;
-    display: none;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .mobile-btn {
-    display: block;
-  }
-}
-
-
-/* Top Bar */ 
-
-.logo {
-  height: 38px;
-}
-
-/* Right Buttons */
-.right-actions {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-}
-
-.quote-btn {
-  padding: 10px 18px;
-  background: transparent;
-  border: 1px solid #fff;
-  color: #fff;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.menu-btn {
-  background: transparent;
-  color: #fff;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-/* Overlay */
-.overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  z-index: 99;
-}
-
-/* Drawer */
-.drawer {
-  position: fixed;
-  top: 0;
-  right: -500px;
-  width: 320px;
-  height: 100vh;
-  background: #0b0b0b;
-  color: #fff;
-  padding: 30px;
-  z-index: 100;
-  transition: right 0.4s ease;
-}
-
-.drawer.open {
-  right: 0;
-}
-
-/* Close Button */
-.close-btn {
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 22px;
-  cursor: pointer;
-  float: right;
-}
-
-/* Drawer Links */
-.drawer-nav {
-  margin-top: 60px;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-.drawer-nav a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 18px;
-  transition: color 0.3s;
-}
-
-.drawer-nav a:hover {
-  color: #4da3ff;
-}
-
-
+/* =========================
+   TOP BAR (FIXED HEADER)
+   ========================= */
 .topbar {
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
+  max-width: 100vw;
   height: 70px;
   padding: 0 32px;
   display: flex;
@@ -199,15 +116,16 @@
   z-index: 100;
 }
 
-.logo {
-  height: 42px;
-}
-
+/* Right actions */
 .right-actions {
   display: flex;
   gap: 16px;
+  align-items: center;
+  max-width: 100%;
+  flex-shrink: 0;
 }
 
+/* Quote button */
 .quote-btn {
   background: linear-gradient(135deg, #8b5cf6, #ec4899);
   border: none;
@@ -218,6 +136,7 @@
   cursor: pointer;
 }
 
+/* Menu button */
 .menu-btn {
   background: transparent;
   color: white;
@@ -227,24 +146,35 @@
   cursor: pointer;
 }
 
+/* =========================
+   OVERLAY
+   ========================= */
 .overlay {
   position: fixed;
   inset: 0;
+  width: 100vw;
+  height: 100vh;
   background: rgba(0,0,0,0.6);
   z-index: 90;
 }
 
+/* =========================
+   DRAWER
+   ========================= */
 .drawer {
   position: fixed;
   top: 0;
   right: 0;
   width: 340px;
+  max-width: 100vw;
   height: 100vh;
   background: #0b0b15;
   z-index: 100;
   padding: 40px 24px;
+  overflow-x: hidden;
 }
 
+/* Close button */
 .close-btn {
   background: none;
   color: white;
@@ -256,6 +186,7 @@
   cursor: pointer;
 }
 
+/* Drawer nav */
 .drawer-nav {
   margin-top: 80px;
   display: flex;
@@ -283,4 +214,107 @@
 
 .drawer-nav a:hover::after {
   width: 100%;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+   ========================= */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .desktop-btn {
+    display: none;
+  }
+
+  .mobile-btn {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    max-width: 100vw;
+    background: #fff;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .topbar {
+    padding: 12px 16px;
+    height: auto;
+  }
+
+  .quote-btn {
+    display: none;
+  }
+
+  .menu-btn {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .drawer {
+    width: 100vw;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+   ========================= */
+@media (max-width: 480px) {
+  .logo {
+    height: 34px;
+  }
+
+  .menu-btn {
+    font-size: 13px;
+  }
+
+  .drawer-nav a {
+    font-size: 20px;
+  }
+}
+
+
+
+/* =========================
+   DRAWER QUOTE BUTTON
+   ========================= */
+.drawer-quote-btn {
+  margin-top: 40px;
+  padding: 14px 20px;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  color: white;
+  width: 100%;
+  display: none; /* hidden by default */
+}
+
+/* =========================
+   MOBILE ONLY
+   ========================= */
+@media (max-width: 768px) {
+  .drawer-quote-btn {
+    display: block;
+  }
+
+  /* hide header quote button on mobile */
+  .topbar .quote-btn {
+    display: none;
+  }
 }

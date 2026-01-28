@@ -55,11 +55,26 @@ const Navbar = () => {
             </button>
 
             <nav className="drawer-nav">
-              <NavLink to="/" onClick={() => setOpen(false)}>Home</NavLink>
-              <NavLink to="/about" onClick={() => setOpen(false)}>About</NavLink>
-              <NavLink to="/solutions" onClick={() => setOpen(false)}>Solutions</NavLink>
-              <NavLink to="/services" onClick={() => setOpen(false)}>Services</NavLink>
-              <NavLink to="/contact" onClick={() => setOpen(false)}>Contact</NavLink>
+              <NavLink to="/" onClick={() => setOpen(false)}>
+                Home
+              </NavLink>
+              <NavLink to="/about" onClick={() => setOpen(false)}>
+                About
+              </NavLink>
+              <NavLink to="/solutions" onClick={() => setOpen(false)}>
+                Solutions
+              </NavLink>
+              <NavLink to="/services" onClick={() => setOpen(false)}>
+                Services
+              </NavLink>
+              <NavLink to="/contact" onClick={() => setOpen(false)}>
+                Contact
+              </NavLink>
+
+              {/* MOBILE ONLY QUOTE BUTTON */}
+              <button className="drawer-quote-btn">
+                REQUEST A QUOTE
+              </button>
             </nav>
           </motion.aside>
         )}
