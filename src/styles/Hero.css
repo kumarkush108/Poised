@@ -148,7 +148,7 @@
   .hero-bg-wrapper {
     grid-template-columns: repeat(2, 1fr); /* 3 → 2 columns */
     gap: 10px;
-    width: 180%;
+    width:200%;
   }
 
   .hero-column img {
@@ -201,7 +201,7 @@
 @media (max-width: 480px) {
   .hero-bg-wrapper {
     grid-template-columns: 1fr; /* single column */
-    width: 180%;
+    width: 200%;
   }
 
   .hero-column img {
