@@ -18,10 +18,12 @@ const images = [
 
 export default function Hero() {
   return (
-    <section className="hero">
+    <section className="hero md:px-20">
 
       {/* BACKGROUND COLUMNS */}
-      <div className="hero-bg">
+      <div className="hero-bg ">
+        {/* OVERLAY */}
+      <div className="hero-overlay"></div>
         <div className="hero-bg-wrapper">
 
           {[false, true, false].map((reverse, colIndex) => (
@@ -41,9 +43,6 @@ export default function Hero() {
 
         </div>
       </div>
-
-      {/* OVERLAY */}
-      <div className="hero-overlay"></div>
 
       {/* CONTENT */}
       <div className="hero-content">

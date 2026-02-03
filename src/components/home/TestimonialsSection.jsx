@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { Quote } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-
 import "swiper/css";
 
 const testimonials = [
@@ -37,7 +36,6 @@ export default function TestimonialsSection() {
   const slideRefs = useRef([]);
 
   useEffect(() => {
-    // Calculate max height of all slides
     const heights = slideRefs.current.map((slide) =>
       slide ? slide.offsetHeight : 0
     );
@@ -45,16 +43,16 @@ export default function TestimonialsSection() {
   }, []);
 
   return (
-    <section className="py-28 bg-[#020617] text-white">
-      <div className="max-w-full mx-auto px-6">
+    <section className="bg-[#020617] text-white py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* HEADING */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <p className="text-cyan-400 tracking-widest uppercase mb-4">
+        <div className="text-center max-w-2xl mx-auto mb-12 md:mb-20">
+          <p className="text-cyan-400 tracking-widest uppercase mb-3 text-sm">
             Testimonials
           </p>
 
-          <h2 className="text-3xl md:text-4xl font-bold leading-tight">
+          <h2 className="text-2xl md:text-4xl font-bold leading-snug">
             What Our Clients Say About Us
           </h2>
         </div>
@@ -62,12 +60,9 @@ export default function TestimonialsSection() {
         {/* SLIDER */}
         <Swiper
           modules={[Autoplay]}
-          autoplay={{
-            delay: 4500,
-            disableOnInteraction: false,
-          }}
-          loop={true}
-          spaceBetween={30}
+          autoplay={{ delay: 4500, disableOnInteraction: false }}
+          loop
+          spaceBetween={20}
           slidesPerView={1}
           breakpoints={{
             768: { slidesPerView: 2 },
@@ -75,31 +70,35 @@ export default function TestimonialsSection() {
           }}
         >
           {testimonials.map((item, i) => (
-            <SwiperSlide key={i}>
+            <SwiperSlide key={i} className="h-auto">
               <div
                 ref={(el) => (slideRefs.current[i] = el)}
                 style={{ minHeight: maxHeight }}
-                className="flex flex-col rounded-3xl p-10
-                           bg-white/5 backdrop-blur-md
-                           border border-white/10
-                           hover:bg-white/10 transition"
+                className="
+                  flex flex-col
+                  rounded-2xl
+                  p-6 sm:p-8
+                  bg-white/5 backdrop-blur-md
+                  border border-white/10
+                  transition
+                "
               >
                 {/* QUOTE ICON */}
-                <div className="mb-6 text-cyan-400">
-                  <Quote size={28} />
+                <div className="mb-4 text-cyan-400">
+                  <Quote size={24} />
                 </div>
 
                 {/* CONTENT */}
-                <p className="text-gray-300 leading-relaxed mb-8 flex-grow">
+                <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6 flex-grow">
                   “{item.content}”
                 </p>
 
                 {/* AUTHOR */}
                 <div>
-                  <p className="font-semibold text-white">
+                  <p className="font-semibold text-white text-sm">
                     {item.name}
                   </p>
-                  <p className="text-sm text-gray-400">
+                  <p className="text-xs text-gray-400 mt-1">
                     {item.role}
                   </p>
                 </div>

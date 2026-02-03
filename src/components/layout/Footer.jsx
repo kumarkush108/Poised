@@ -1,21 +1,19 @@
 import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
-// No import needed for public SVG
 
 export default function Footer() {
   return (
     <footer
       className="relative min-h-[420px] text-white pt-16 pb-12"
       style={{
-        backgroundImage: `url(../../assets/footer-bg.svg)`,
+        backgroundImage: `url(${import.meta.env.BASE_URL}assets/footer-bg.svg)`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "bottom center",
         backgroundColor: "rgb(2, 6, 23)", // Fallback
       }}
     >
-      {/* Remove debug overlay now */}
       <div className="max-w-full mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
-        {/* Your existing content unchanged */}
+        {/* About */}
         <div>
           <h3 className="text-2xl font-bold mb-4">About Us</h3>
           <p className="text-sm opacity-90 leading-relaxed">
@@ -27,12 +25,16 @@ export default function Footer() {
           </p>
         </div>
 
+        {/* Links */}
         <div>
           <h3 className="text-2xl font-bold mb-4">Links</h3>
           <ul className="space-y-2 text-sm">
             {["Home", "About", "Solutions", "Services", "Contact"].map((item) => (
               <li key={item}>
-                <a href={`#${item.toLowerCase()}`} className="hover:text-cyan-300 transition">
+                <a
+                  href={`#${item.toLowerCase()}`}
+                  className="hover:text-cyan-300 transition"
+                >
                   {item}
                 </a>
               </li>
@@ -40,6 +42,7 @@ export default function Footer() {
           </ul>
         </div>
 
+        {/* Contact */}
         <div>
           <h3 className="text-2xl font-bold mb-4">Contact Us</h3>
           <p className="text-sm opacity-90 mb-2">

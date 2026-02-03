@@ -2,14 +2,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
-// Add brand names along with logos
 const brands = [
-  { logo: "/brands/CZlogo.png", name: "Corezone" },
-  { logo: "/brands/Eindhan.png", name: "Eindhan" },
-  { logo: "/brands/SPMS.png", name: "Poisedol" },
-  { logo: "/brands/Eindhan.png", name: "Eindhan" },
-  { logo: "/brands/CZlogo.png", name: "Corezone" },
-  { logo: "/brands/SPMS.png", name: "Poisedol" },
+  { logo: "brands/CZlogo.png", name: "Corezone" },
+  { logo: "brands/Eindhan.png", name: "Eindhan" },
+  { logo: "brands/SPMS.png", name: "Poisedol" },
+  { logo: "brands/Eindhan.png", name: "Eindhan" },
+  { logo: "brands/CZlogo.png", name: "Corezone" },
+  { logo: "brands/SPMS.png", name: "Poisedol" },
 ];
 
 export default function BrandSlider() {
@@ -35,7 +34,7 @@ export default function BrandSlider() {
           <SwiperSlide key={i}>
             <div className="flex flex-col justify-center items-center h-24 opacity-70 hover:opacity-100 transition">
               <img
-                src={brand.logo}
+                src={`${import.meta.env.BASE_URL}${brand.logo}`}
                 alt={brand.name}
                 className="h-10 object-contain mb-2"
               />
